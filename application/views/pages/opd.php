@@ -8,7 +8,8 @@ if (isset($this->session->userdata['logged_in'])) {
 	$username = ($this->session->userdata['logged_in']['username']);
 	} else {
 	header("location: login");
-	}
+    }
+    
 ?>
 ?>	
 	<!-- begin #page-container -->
@@ -101,7 +102,7 @@ if (isset($this->session->userdata['logged_in'])) {
                             </div>
                         </li>
                         <li>
-                            <a href="<?php echo base_url(); ?>index.php/pages/view/opd" >
+                            <a href="<<?php  ?>>"
                                 <i class="ion-ios-people m-r-5 f-s-20 pull-left"></i> OPD
                             </a>
 						</li>
@@ -171,7 +172,7 @@ if (isset($this->session->userdata['logged_in'])) {
 					</li>
                     
 					<li>
-						<a href="<?php echo base_url(); ?>index.php/pages/view/opd">
+						<a href="javascript:;">
 						    <i class="ion-ios-pulse-strong"></i> 
 						    <span>OPD</span>
 						</a>
@@ -224,6 +225,199 @@ if (isset($this->session->userdata['logged_in'])) {
 		
 
         <!-- end theme-panel -->
+        <div id="content" class="content">
+			<!-- begin breadcrumb -->
+			<!-- <ol class="breadcrumb pull-right">
+				<li><a href="javascript:;">Home</a></li>
+				<li><a href="javascript:;">Form Stuff</a></li>
+				<li class="active">Form Elements</li>
+			</ol> -->
+			<!-- end breadcrumb -->
+			<!-- begin page-header -->
+			<h1 class="page-header">OPD Form</h1>
+			<!-- end page-header -->
+			
+			<!-- begin row -->
+			<div class="row">
+                <!-- begin col-6 -->
+			    <div class="col-md-12">
+			        <!-- begin panel -->
+                    <div class="panel panel-inverse" data-sortable-id="form-stuff-1">
+                        <div class="panel-heading">
+                            <!-- <div class="panel-heading-btn">
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+                            </div> -->
+                            <h4 class="panel-title">OPD</h4>
+                        </div>
+                        <div class="panel-body">
+                            <form class="form-horizontal" action="<?php echo base_url(); ?>index.php/pages/opdSubmit" method="post">
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Sr. No.</label>
+                                    <div class="col-md-9">
+                                        <!--A value from DB -->
+                                        <?php echo $srNo; ?>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Receipt No.</label>
+                                    <div class="col-md-9">
+                                        <!--A value from DB -->
+                                        <?php echo $receipt; ?>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Patient Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Full Name" name="full_name"/>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Contact Number</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Contact number" name="contact_number" />
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label class="col-md-3 control-label">Select</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+                                <!-- <div class="form-group">
+                                    <label class="col-md-3 control-label">Select (multiple)</label>
+                                    <div class="col-md-9">
+                                        <select multiple class="form-control">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                        </select>
+                                    </div>
+                                </div> -->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Address</label>
+                                    <div class="col-md-9">
+                                        <textarea class="form-control" placeholder="Residential Address" rows="5" name="residential_addrs"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Age</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Age" name="age"/>
+                                    </div>
+                                </div>
+                               <!--  <div class="form-group">
+                                    <label class="col-md-3 control-label">Checkbox</label>
+                                    <div class="col-md-9">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="" />
+                                                Checkbox Label 1
+                                            </label>
+                                        </div>
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="" />
+                                                Checkbox Label 2
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Inline Checkbox</label>
+                                    <div class="col-md-9">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" />
+                                            Checkbox Label 1
+                                        </label>
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="" />
+                                            Checkbox Label 2
+                                        </label>
+                                    </div>
+                                </div> -->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Sex</label>
+                                    <div class="col-md-9">
+                                        <div class="radio-inline">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" value="Male" checked />
+                                                Male
+                                            </label>
+                                        </div>
+                                        <div class="radio-inline">
+                                            <label>
+                                                <input type="radio" name="optionsRadios" value="Female" />
+                                                Female
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- <div class="form-group">
+                                    <label class="col-md-3 control-label">Inline Radio Button</label>
+                                    <div class="col-md-9">
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optionsRadios" value="option1" checked />
+                                            Radio option 1
+                                        </label>
+                                        <label class="radio-inline">
+                                            <input type="radio" name="optionsRadios" value="option2" />
+                                            Radio option 2
+                                        </label>
+                                    </div>
+                                </div> -->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Diagnosis</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="diagnosis"/>
+                                        <!-- <span class="fa fa-check form-control-feedback"></span> -->
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Checked By</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Name of Doctor" name="doctor" />
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Remarks</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" placeholder="Feedback" name="feedback" />
+                                    </div>
+                                </div>
+                               <!--  <div class="form-group has-warning has-feedback">
+                                    <label class="col-md-3 control-label">Input with Warning</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" />
+                                        <span class="fa fa-warning form-control-feedback"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group has-error has-feedback">
+                                    <label class="col-md-3 control-label">Input with Error</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" />
+                                        <span class="fa fa-times form-control-feedback"></span>
+                                    </div>
+                                </div> -->
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Submit</label>
+                                    <div class="col-md-9">
+                                        <button type="submit" class="btn btn-sm btn-success">Submit Form</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 		
 		<!-- begin scroll to top btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-primary btn-scroll-to-top fade" data-click="scroll-top"><i class="fa fa-angle-up"></i></a>

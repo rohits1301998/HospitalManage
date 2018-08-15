@@ -21,7 +21,7 @@ header("location: ".$loc);
             </div>
             <!-- end brand -->
             <div class="login-content">
-                <form action="<?php echo base_url() ?>Auth/validate" method="POST" class="margin-bottom-0">
+                <form action="<?php echo base_url() ?>index.php/Auth/validate" method="POST" class="margin-bottom-0">
                     <div class="form-group m-b-20">
                         <input type="text" name="username" class="form-control input-lg inverse-mode no-border" placeholder="Email Address" required />
                     </div>
